@@ -1,3 +1,4 @@
+data/mosquitto.db
 log/mosquitto.log
 config/mosquitto.conf
 config/password.txt
