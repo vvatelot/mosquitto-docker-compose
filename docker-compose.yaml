@@ -2,7 +2,7 @@ version: "3"
 
 services:
   mosquitto:
-    image: eclipse-mosquitto:1.6
+    image: eclipse-mosquitto:2
     volumes:
       - ./:/mosquitto/:rw
     ports:
