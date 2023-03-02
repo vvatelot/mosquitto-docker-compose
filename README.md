@@ -35,7 +35,7 @@ mosquitto_pub -h localhost -t sensor/temperature -m 23
 
 The config file is in the file [mosquito.conf](./config/mosquitto.conf)
 
-By default we activated the log and data persistance (logs are in the `log` folder, and data are stored in a docker voume).
+By default we activated the log and data persistance (logs are in the `log` folder, and data are stored in a docker volume).
 
 ## Authentication
 
