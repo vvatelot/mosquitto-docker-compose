@@ -41,23 +41,20 @@ By default we activated the log and data persistance (logs are in the `log` fold
 
 ### Enable authentication
 
-In the config file, just uncomment the `Authentication` part and then restart the container.
-The default user is `admin/password`.
+In the config file, set the value `allow_anonymous` to `false`, then uncomment the last line (`authentication_file`) and finaly restart the container.
 
-**You always have to restart if you want the modification to be taken in account:**
-
-```bash
-docker-compose restart
-```
+> The default user is `admin/password`.
 
 ### Change user password / create a new user
 
 ```bash
 docker-compose exec mosquitto mosquitto_passwd -b /mosquitto/config/password.txt user password
+docker-compose restart
 ```
 
 ### Delete user
 
 ```bash
 docker-compose exec mosquitto mosquitto_passwd -D /mosquitto/config/password.txt user
+docker-compose restart
 ```
