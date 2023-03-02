@@ -41,7 +41,7 @@ By default we activated the log and data persistance (logs are in the `log` fold
 
 ### Enable authentication
 
-In the config file, set the value `allow_anonymous` to `false`, then uncomment the last line (`authentication_file`) and finaly restart the container.
+In the config file, set the value `allow_anonymous` to `false`, then uncomment the last line (`password_file`) and finaly restart the container.
 
 > The default user is `admin/password`.
 
