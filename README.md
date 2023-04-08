@@ -7,7 +7,7 @@ This is a simple [Mosquitto](https://mosquitto.org) broker to quickly initialize
 ## Prerequisite
 
 - [Docker](https://www.docker.com/)
-- [Docker compose V2](https://docs.docker.com/compose/)
+- [Docker Compose V2](https://docs.docker.com/compose/)
 
 ## How to use
 
