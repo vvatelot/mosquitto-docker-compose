@@ -7,14 +7,14 @@ This is a simple [Mosquitto](https://mosquitto.org) broker to quickly initialize
 ## Prerequisite
 
 - [Docker](https://www.docker.com/)
-- [Docker compose](https://docs.docker.com/compose/) +v1.27.0 (better to have v2)
+- [Docker Compose V2](https://docs.docker.com/compose/)
 
 ## How to use
 
 To start the container, just :
 
 ```bash
-UID=$UID GID=$GID docker-compose up -d
+UID=$UID GID=$GID docker compose up -d
 ```
 
 The Mosquitto broker is now available on localhost. You can test it easily (require Mosquitto client):
