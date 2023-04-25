@@ -1,10 +1,12 @@
----
-version: '3.7'
-
 services:
   mosquitto:
-    image: eclipse-mosquitto:2
-    user: mosquitto
+    build:
+      context: .
+      args:
+        UID: ${UID:-"$(id -u)"}
+        GID: ${GID:-"$(id -g)"}
+        USER: ${USER:-"$(id -un)"}
+    user: ${UID:-"$(id -u)"}:${GID:-"$(id -g)"}
     volumes:
       - type: bind
         source: ./config/

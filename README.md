@@ -14,7 +14,7 @@ This is a simple [Mosquitto](https://mosquitto.org) broker to quickly initialize
 To start the container, just :
 
 ```bash
-UID=$UID GID=$GID docker compose up -d
+UID=$UID GID=$GID USER=$USER docker compose up -d --build
 ```
 
 The Mosquitto broker is now available on localhost. You can test it easily (require Mosquitto client):
@@ -48,13 +48,13 @@ In the config file, set the value `allow_anonymous` to `false`, then uncomment t
 ### Change user password / create a new user
 
 ```bash
-docker-compose exec mosquitto mosquitto_passwd -b /mosquitto/config/password.txt user password
-docker-compose restart
+docker compose exec -u $USER mosquitto mosquitto_passwd -b /mosquitto/config/password.txt user password
+docker compose restart
 ```
 
 ### Delete user
 
 ```bash
-docker-compose exec mosquitto mosquitto_passwd -D /mosquitto/config/password.txt user
-docker-compose restart
+docker compose exec -u $USER mosquitto mosquitto_passwd -D /mosquitto/config/password.txt user
+docker compose restart
 ```
