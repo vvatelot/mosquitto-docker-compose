@@ -14,7 +14,7 @@ This is a simple [Mosquitto](https://mosquitto.org) broker to quickly initialize
 To start the container, just :
 
 ```bash
-UID=$UID GID=$GID USER=$USER docker compose up -d --build
+UID=$(id -u) GID=$(id -g) docker compose up -d --build
 ```
 
 The Mosquitto broker is now available on localhost. You can test it easily (require Mosquitto client):

@@ -5,7 +5,6 @@ services:
       args:
         UID: ${UID:-"$(id -u)"}
         GID: ${GID:-"$(id -g)"}
-        USER: ${USER:-"$(id -un)"}
     user: ${UID:-"$(id -u)"}:${GID:-"$(id -g)"}
     volumes:
       - type: bind
