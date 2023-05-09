@@ -1,0 +1,12 @@
+#!/bin/bash
+
+projectRootPath=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )/..
+
+if [ ! -f ${projectRootPath}/docker-compose.override.yml ]; then
+    cp ${projectRootPath}/docker-compose.override.yml.dist ${projectRootPath}/docker-compose.override.yml
+
+    sed -i'' -e "s/\[GID\]/$(id -g)/g" ${projectRootPath}/docker-compose.override.yml;
+    sed -i'' -e "s/\[UID\]/$(id -u)/g" ${projectRootPath}/docker-compose.override.yml;
+
+    rm -f docker-compose.override.yml-e # Hack for MAC OS
+fi

@@ -2,10 +2,6 @@ services:
   mosquitto:
     build:
       context: .
-      args:
-        UID: ${UID:-"$(id -u)"}
-        GID: ${GID:-"$(id -g)"}
-    user: ${UID:-"$(id -u)"}:${GID:-"$(id -g)"}
     volumes:
       - type: bind
         source: ./config/
